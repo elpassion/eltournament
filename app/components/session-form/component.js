@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
+  routing: Ember.inject.service('-routing'),
 
   init(){
     this._super(...arguments);
@@ -26,7 +27,14 @@ export default Ember.Component.extend({
     },
 
     save(){
-      console.log('save');
+      this.get('model').save().then(
+        ()=>{
+          this.get("routing").transitionTo("sessions/:id", {id: this.get('model')});
+        },
+        ()=>{
+          console.log('error');
+        }
+      );
     }
   }
 });

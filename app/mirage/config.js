@@ -22,6 +22,8 @@ export default function() {
       }
     };
   });
+  this.post('/tournaments');
+  this.put('/tournaments/:id');
 
   /*
     Route shorthand cheatsheet
