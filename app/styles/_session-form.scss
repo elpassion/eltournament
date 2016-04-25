@@ -1,0 +1,21 @@
+.session-new{
+  padding-top:100px;
+  text-align: center;
+  .logo{
+    width:150px;
+    margin-bottom:20px;
+  }
+}
+
+label{
+  font-size:22px;
+  color:white;
+  line-height:52px;
+}
+
+.form__input{
+  @include rounded-corners(4px);
+  border:1px solid $dark-purple;
+  height:40px;
+  padding:25px;
+}

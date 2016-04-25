@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900&subset=latin,latin-ext);
+body{
+  font-family: 'Lato', sans-serif;
+  background: url("images/bg.jpg");
+  background-size:cover;
+  color:$header;
+}
+
+h1{
+  text-align: center;
+  margin-bottom:40px;
+  font-size: 50px;
+  color:$header;
+  font-weight:bold;
+}

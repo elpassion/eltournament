@@ -1,9 +1,42 @@
-<form novalidate  {{action "save" on="submit"}}>
+
+<form novalidate  {{action "save" on="submit"}} class="add_ne">
+
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-2 columns">
+      <label for="">Name:</label>
+    </div>
+
+    <div class="small-10 columns">
       <label class={{if model.errors.name "is-invalid-label" ""}}>
-        {{input type="text" placeholder="Name" value=model.name}}
+        {{input type="text" class="form__input" placeholder="Name" value=model.name}}
         {{input-errors errors=model.errors.name}}
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-2 columns">
+      <label for="">E-mail:</label>
+    </div>
+
+    <div class="small-10 columns">
+      <label class={{if model.errors.email "is-invalid-label" ""}}>
+
+        {{input type="text" class="form__input" placeholder="Name" value=model.email}}
+        {{input-errors errors=model.errors.email}}
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-2 columns">
+      <label for="">Name:</label>
+    </div>
+
+    <div class="small-10 columns">
+      <label class={{if model.errors.kind "is-invalid-label" ""}}>
+        {{input type="text" class="form__input" placeholder="Name" value=model.kind}}
+        {{input-errors errors=model.errors.kind}}
       </label>
     </div>
   </div>
@@ -31,8 +64,7 @@
   </div>
 
   <div class="row">
-    <div class="small-12 small-centered columns">
-      <button class="button">Create Tournament</button>
-    </div>
+    <button class="large button index__btn">Start tournament</button>
   </div>
+
 </form>
