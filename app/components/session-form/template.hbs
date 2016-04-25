@@ -1,0 +1,36 @@
+<form novalidate  {{action "save" on="submit"}}>
+  <div class="row">
+    <div class="small-12 columns">
+      <label class={{if model.errors.name "is-invalid-label" ""}}>
+        {{input type="text" placeholder="Name" value=model.name}}
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <fieldset class="small-12 columns">
+      <legend>Players</legend>
+      {{#each model.players as |player|}}
+        <div class="row">
+          <div class="small-10 columns">
+            <label class={{if player.errors.name "is-invalid-label" ""}}>
+              {{input type="text" placeholder="Name" value=player.name action='addPlayer'}}
+            </label>
+          </div>
+          <div class="small-2 columns">
+            <a class="button" onclick={{action 'removePlayer' player}}>-</a>
+          </div>
+        </div>
+        {{#if (eq player model.players.lastObject)}}
+          <a class="button" {{action 'addPlayer'}}>+</a>
+        {{/if}}
+      {{/each}}
+    </fieldset>
+  </div>
+
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <button class="button">Create Tournament</button>
+    </div>
+  </div>
+</form>
