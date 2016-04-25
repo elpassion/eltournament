@@ -27,14 +27,18 @@ export default Ember.Component.extend({
     },
 
     save(){
-      this.get('model').save().then(
-        ()=>{
-          this.get("routing").transitionTo("sessions.show", [this.get('model.id')]);
-        },
-        ()=>{
-          console.log('error');
-        }
-      );
+      let tournament = this.get('model');
+
+      if(tournament.validate()){
+        tournament.save().then(
+          ()=>{
+            this.get("routing").transitionTo("sessions.show", [this.get('model.id')]);
+          },
+          ()=>{
+            console.log('error');
+          }
+        );
+      }
     }
   }
 });

@@ -3,6 +3,7 @@
     <div class="small-12 columns">
       <label class={{if model.errors.name "is-invalid-label" ""}}>
         {{input type="text" placeholder="Name" value=model.name}}
+        {{input-errors errors=model.errors.name}}
       </label>
     </div>
   </div>
@@ -15,6 +16,7 @@
           <div class="small-10 columns">
             <label class={{if player.errors.name "is-invalid-label" ""}}>
               {{input type="text" placeholder="Name" value=player.name action='addPlayer'}}
+              {{input-errors errors=player.errors.name}}
             </label>
           </div>
           <div class="small-2 columns">
