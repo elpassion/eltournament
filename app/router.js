@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('about-us');
 
   this.route('sessions', function() {
-    this.route('show', { path: '/:session_id' });
+    this.route('show', { path: ':id' });
     this.route('new');
   });
 
