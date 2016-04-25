@@ -29,7 +29,7 @@ export default Ember.Component.extend({
     save(){
       this.get('model').save().then(
         ()=>{
-          this.get("routing").transitionTo("sessions/:id", {id: this.get('model')});
+          this.get("routing").transitionTo("sessions.show", [this.get('model.id')]);
         },
         ()=>{
           console.log('error');
