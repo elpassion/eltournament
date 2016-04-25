@@ -1,3 +1,23 @@
 @import "settings";
 @import 'foundation';
 @include foundation-everything;
+@import "mixins";
+@import "animate";
+
+// Global styles
+@import "colors";
+@import "globals";
+
+// Styles for views:
+@import "index";
+
+
+// Styles for components
+@import "top-bar";
+@import "session-ranking";
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900&subset=latin,latin-ext);
+body{
+  font-family: 'Lato', sans-serif;
+}
