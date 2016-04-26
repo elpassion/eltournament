@@ -22,6 +22,7 @@ export default function() {
     this.del('/posts/:id');
   */
 
+  this.get('/tournaments');
   this.post('/tournaments');
   this.get('/tournaments/:id');
   this.put('/tournaments/:id');

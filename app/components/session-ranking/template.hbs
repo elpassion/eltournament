@@ -1,4 +1,18 @@
 <div class="session-ranking">
   <h3>Ranking:</h3>
-  
+
+  {{#each session.players as |player|}}
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="row">
+          <div class="small-6 columns">
+            {{player.name}}
+          </div>
+          <div class="small-6 columns">
+            {{player.points}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
 </div>
