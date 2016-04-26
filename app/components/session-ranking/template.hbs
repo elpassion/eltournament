@@ -1,10 +1,9 @@
 <div class="session-ranking">
   <h3>Ranking:</h3>
 
-
-
-  {{#each session.players as |player index|}}
+  {{#each sortedPlayers as |player index|}}
     <div class="row collapse">
+
       <div class="small-12 columns">
         <div class="row user__row">
           <div class="small-10 columns ranking__txt">

@@ -5,8 +5,11 @@ import Validator from '../mixins/model-validator';
 
 export default Model.extend(Validator, {
   name: attr('string'),
+  disciplineType: attr('string'),
 
-  players: DS.hasMany('player', {embedded: 'always'}),
+  players: DS.hasMany('player', {async: true}),
+  rounds: DS.hasMany('round', {async: true}),
+  matches: DS.hasMany('match', {async: true}),
 
   validations: {
     name: {
