@@ -29,39 +29,43 @@
   </div>
 
   <div class="row">
-    <div class="small-2 columns">
-      <label for="">Name:</label>
-    </div>
-
-    <div class="small-10 columns">
-      <label class={{if model.errors.kind "is-invalid-label" ""}}>
-        {{input type="text" class="form__input" placeholder="Name" value=model.kind}}
-        {{input-errors errors=model.errors.kind}}
-      </label>
+    <div class="small-12 players__header">
+      Add players:
     </div>
   </div>
 
-  <div class="row">
-    <fieldset class="small-12 columns">
-      <legend>Players</legend>
-      {{#each model.players as |player|}}
-        <div class="row">
-          <div class="small-10 columns">
-            <label class={{if player.errors.name "is-invalid-label" ""}}>
-              {{input type="text" placeholder="Name" value=player.name action='addPlayer'}}
-              {{input-errors errors=player.errors.name}}
-            </label>
-          </div>
-          <div class="small-2 columns">
-            <a class="button" onclick={{action 'removePlayer' player}}>-</a>
-          </div>
+
+  {{#each model.players as |player index|}}
+    <div class="row">
+
+      {{#if (not-eq player model.players.lastObject)}}
+        <div class="small-2 columns">
+          <label>Player {{ saneIndex index }}:</label>
         </div>
-        {{#if (eq player model.players.lastObject)}}
-          <a class="button" {{action 'addPlayer'}}>+</a>
-        {{/if}}
-      {{/each}}
-    </fieldset>
-  </div>
+      {{/if}}
+
+      <div class="{{if (eq player model.players.lastObject) "small-offset-2 last-input"}} small-10 columns">
+        <div class="input-group">
+            <div class={{if player.errors.name "is-invalid-label" "input-group-field"}} >
+              {{input type="text" placeholder="Name" class="input-group-field form__input input-buttonRight" value=player.name action='addPlayer'}}
+              {{input-errors errors=player.errors.name}}
+            </div>
+
+
+              {{#if (not-eq player model.players.lastObject)}}
+              <a class="input-group-button button btn-form btn-form-remove" onclick={{action 'removePlayer' player}}>-</a>
+              {{/if}}
+
+              {{#if (eq player model.players.lastObject)}}
+                <a class="input-group-button button btn-form btn-form-add " {{action 'addPlayer'}}>+</a>
+              {{/if}}
+
+        </div>
+      </div>
+
+
+    </div>
+  {{/each}}
 
   <div class="row">
     <button class="large button index__btn">Start tournament</button>

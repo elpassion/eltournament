@@ -19,3 +19,66 @@ label{
   height:40px;
   padding:25px;
 }
+
+.players__header{
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:24px;
+}
+
+.btn-form{
+  @include rounded-corners(0 4px 4px 0);
+  border:1px solid $dark-purple;
+  border-left:0;
+
+  height:52px;
+  width:52px;
+
+  font-size:40px;
+  font-weight: bold;
+  padding:0;
+
+  a{
+    margin-top:-15px;
+  }
+}
+
+.btn-form-remove{
+  background-color: $grey;
+  line-height:47px;
+  &:hover{
+    background-color:darken($grey, 10%);
+  }
+}
+.btn-form-add{
+  background-color:$green;
+  line-height:49px;
+  &:hover{
+    background-color:darken($green, 10%);
+  }
+}
+
+.input-buttonRight{
+  @include rounded-corners(4px 0 0 4px);
+  border-right:0;
+}
+
+.is-invalid-label{
+  position: relative;
+}
+
+.form-error{
+  position: absolute;
+  right:20px;
+  line-height: 5.6em;
+}
+
+.input-group .form-error{
+  position: absolute;
+  right: 20px;
+  top:3px;
+}
+
+.last-input{
+  margin-bottom:40px;
+}
