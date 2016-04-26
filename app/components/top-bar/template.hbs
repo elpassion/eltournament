@@ -6,7 +6,14 @@
       <h1>{{session.name}}</h1>
     </div>
     <div class="small-6 columns text-center">
-      linkers
+      <form>
+        <div class="input-group">
+          {{input type="text" value=sessionPath class="input-group-field"}}
+          {{#zero-clipboard text=sessionPath class="input-group-button button"}}
+            <img src="assets/images/ico-copy.svg" alt="Copy">
+          {{/zero-clipboard}}
+        </div>
+      </form>
     </div>
     <div class="small-3 columns text-right">
       <h1>11:22:33</h1>
