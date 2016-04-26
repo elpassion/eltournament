@@ -28,6 +28,7 @@ export default Ember.Component.extend({
 
     save(){
       let tournament = this.get('model');
+      tournament.set('id', null);
 
       if(tournament.validate()){
         tournament.save().then(() => {
