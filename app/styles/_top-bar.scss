@@ -1,1 +1,25 @@
 // Styles for top-bar component
+.top-bar{
+  height:80px;
+  background-color:#2f2952;
+  padding-left:40px;
+  padding-right:40px;
+  overflow: hidden;
+
+  .row{
+    height:80px;
+  }
+
+  .logo{
+    height:50px;
+    margin-top:-14px;
+  }
+  h1{
+    font-size:22px;
+    font-weight:bold;
+    display:inline-block;
+    line-height: 80px;
+    margin-top:-5px;
+    margin-left:20px;
+  }
+}

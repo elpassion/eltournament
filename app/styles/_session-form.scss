@@ -1,6 +1,17 @@
+
 .session-new{
   padding-top:100px;
   text-align: center;
+
+  background: url("images/bg.jpg");
+  background-size:cover;
+
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+
   .logo{
     width:150px;
     margin-bottom:20px;

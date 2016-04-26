@@ -1,12 +1,16 @@
+<section class="session-show">
 {{top-bar session=model}}
 
-<div class="expanded row">
-  <div class="large-9 columns">
-    content
+<div class="expanded row session-content">
+
+  <div class="small-9 columns sessionContent__container">
+    {{session-card}}
   </div>
 
-  <div class="large-3 columns">
+  <div class="small-3 columns sessionRanking__container">
     {{session-ranking session=model}}
   </div>
 
 </div>
+
+</section>

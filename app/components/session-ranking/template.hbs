@@ -1,14 +1,21 @@
 <div class="session-ranking">
   <h3>Ranking:</h3>
 
-  {{#each session.players as |player|}}
-    <div class="row">
+
+
+  {{#each session.players as |player index|}}
+    <div class="row collapse">
       <div class="small-12 columns">
-        <div class="row">
-          <div class="small-6 columns">
+        <div class="row user__row">
+          <div class="small-10 columns ranking__txt">
+            {{ saneIndex index }}.
+
+            <!-- <img src="http://www.gravatar.com/avatar/{{ player.id }}&d=identicon" alt="" class="user-avatar"> -->
+            {{gravatar-image hash=player.id class='user-avatar'}}
+
             {{player.name}}
           </div>
-          <div class="small-6 columns">
+          <div class="small-2 columns text-right ranking__txt">
             {{player.points}}
           </div>
         </div>
