@@ -14,19 +14,19 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="small-2 columns">
-      <label for="">E-mail:</label>
-    </div>
+  <!-- <div class="row"> -->
+  <!--   <div class="small-2 columns"> -->
+  <!--     <label for="">E-mail:</label> -->
+  <!--   </div> -->
 
-    <div class="small-10 columns">
-      <label class={{if model.errors.email "is-invalid-label" ""}}>
+  <!--   <div class="small-10 columns"> -->
+  <!--     <label class={{if model.errors.email "is-invalid-label" ""}}> -->
 
-        {{input type="text" class="form__input" placeholder="Name" value=model.email}}
-        {{input-errors errors=model.errors.email}}
-      </label>
-    </div>
-  </div>
+  <!--       {{input type="text" class="form__input" placeholder="Name" value=model.email}} -->
+  <!--       {{input-errors errors=model.errors.email}} -->
+  <!--     </label> -->
+  <!--   </div> -->
+  <!-- </div> -->
 
   <div class="row">
     <div class="small-12 players__header">
@@ -57,7 +57,7 @@
               {{/if}}
 
               {{#if (eq player model.players.lastObject)}}
-                <a class="input-group-button button btn-form btn-form-add " {{action 'addPlayer'}}>+</a>
+                <a class="input-group-button button btn-form btn-form-add " onclick={{action "addPlayer"}}>+</a>
               {{/if}}
 
         </div>
