@@ -30,14 +30,11 @@ export default Ember.Component.extend({
       let tournament = this.get('model');
 
       if(tournament.validate()){
-        tournament.save().then(
-          ()=>{
-            this.get("routing").transitionTo("sessions.show", [this.get('model.id')]);
-          },
-          ()=>{
-            console.log('error');
-          }
-        );
+        tournament.save().then(() => {
+          return Ember.RSVP.all(tournament.get('players').invoke('save'));
+        }).then(() => {
+          this.get("routing").transitionTo("sessions.show", [this.get('model.id')]);
+        });
       }
     }
   }

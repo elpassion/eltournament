@@ -8,7 +8,7 @@ export default function() {
     Note: these only affect routes defined *after* them!
   */
 
-  // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
+  this.urlPrefix = 'http://localhost:4000';    // make this `http://localhost:8080`, for example, if your API is on a different server
   this.namespace = 'api';    // make this `api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
@@ -26,4 +26,12 @@ export default function() {
   this.post('/tournaments');
   this.get('/tournaments/:id');
   this.put('/tournaments/:id');
+
+  this.get('/tournaments/:tournament_id/players');
+  this.post('/tournaments/:tournament_id/players');
+  this.get('/tournaments/:tournament_id/players/:id');
+  this.put('/tournaments/:tournament_id/players/:id');
+
+  this.get('/tournaments/:tournament_id/rounds');
+  this.get('/tournaments/:tournament_id/matches');
 }

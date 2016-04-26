@@ -6,6 +6,11 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    api: {
+      namespace: 'api',
+      host: 'http://localhost:4000'
+    },
+    'connect-src': "'self' http://localhost:*",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -21,7 +26,12 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV['ember-cli-mirage'] = {
-      enabled: true
+      enabled: false
+    };
+
+    ENV['api'] = {
+      namespace: 'api',
+      host: 'http://localhost:4000'
     };
 
     // ENV.APP.LOG_RESOLVER = true;
